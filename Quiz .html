@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../projet web/css/stylesheet.css">
+    <title>Quiz</title>
+    <script language="javascript">
+        function afficherResultats(quiz) {
+            var score = 0;
+            var reponsesCorrectes = ['8', 'William Shakespeare', 'Kangourou', 'Océan Pacifique', '1969', 'Leonardo da Vinci', '1948', 'Joseph Staline', 'Assassinat de l\'archiduc François-Ferdinand', 'George Washington'];
+            var resultatTexte = "Vos réponses correctes : \n";
+            for (var i = 1; i <= 10; i++) {
+                var questionName = i.toString();
+                var selectedOption = quiz.querySelector('input[name="' + questionName + '"]:checked');
+                if (selectedOption) {
+                    resultatTexte += "Question " + i + ": Vous avez choisi " + selectedOption.value + ". ";
+                    if (selectedOption.value === reponsesCorrectes[i - 1]) {
+                        resultatTexte += "C'est correct!\n";
+                        score++;
+                    } else {
+                        resultatTexte += "La réponse correcte est " + reponsesCorrectes[i - 1] + ".\n";
+                    }
+                }
+            }
+            resultatTexte += "\nVotre score est " + score;
+            alert(resultatTexte);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Chaima CHELLY : Un Voyage Virtuel</h1>
+        <nav>
+            <a href="page d'accueil .html">Accueil</a>
+            <a href="page des informations personelles.html">Informations Personelles</a>
+            <a href="page de contact .html">Contactez Moi</a>
+            <a href="temoignage .html">Témoignage sur l'IIT</a>
+            <a id="menu_actuel" href="Quiz .html">Un Petit Quiz..</a>
+        </nav>
+    </header>
+    <main>
+        <h1>ARE YOU READY?</h1>
+        <p>
+            Prêt à tester vos connaissances ? Mettez-vous au défi avec ce quiz diversifié et découvrez à quel point vous êtes incollable sur des sujets variés!
+        </p>
+        <form name="quiz">
+            <p id="question">1. Combien de planètes y a-t-il dans notre système solaire?</p>
+            <input type="radio" name="1" value="7" id="7"><label for="7">7</label><br>
+            <input type="radio" name="1" value="8" id="8"><label for="8">8</label><br>
+            <input type="radio" name="1" value="9" id="9"><label for="9">9</label><br>
+            <p id="question">2. Qui a écrit "Roméo et Juliette"?</p>
+            <input type="radio" name="2" value="Charles Dickens" id="Charles Dickens"><label for="Charles Dickens">Charles Dickens</label><br>
+            <input type="radio" name="2" value="William Shakespeare" id="William Shakespeare"><label for="William Shakespeare">William Shakespeare</label><br>
+            <input type="radio" name="2" value="Jane Austen" id="Jane Austen"><label for="Jane Austen">Jane Austen</label><br>
+            <p id="question">3. Quel est l'animal emblématique de l'Australie?</p>
+            <input type="radio" name="3" value="Koala" id="Koala"><label for="Koala">Koala</label><br>
+            <input type="radio" name="3" value="Kangourou" id="Kangourou"><label for="Kangourou">Kangourou</label><br>
+            <input type="radio" name="3" value="Émeu" id="Émeu"><label for="Émeu">Émeu</label><br>
+            <p id="question">4. Quelle est la plus grande océan du monde?</p>
+            <input type="radio" name="4" value="Océan Atlantique" id="Océan Atlantique"><label for="Océan Atlantique">Océan Atlantique</label><br>
+            <input type="radio" name="4" value="Océan Indien" id="Océan Indien"><label for="Océan Indien">Océan Indien</label><br>
+            <input type="radio" name="4" value="Océan Pacifique" id="Océan Pacifique"><label for="Océan Pacifique">Océan Pacifique</label><br>
+            <p id="question">5. En quelle année a eu lieu la première mission lunaire réussie?</p>
+            <input type="radio" name="5" value="1967" id="1967"><label for="1967">1967</label><br>
+            <input type="radio" name="5" value="1969" id="1969"><label for="1969">1969</label><br>
+            <input type="radio" name="5" value="1972" id="1972"><label for="1972">1972</label><br>
+            <p id="question">6. Qui a peint la Joconde?</p>
+            <input type="radio" name="6" value="Vincent van Gogh" id="Vincent van Gogh"><label for="Vincent van Gogh">Vincent van Gogh</label><br>
+            <input type="radio" name="6" value="Leonardo da Vinci" id="Leonardo da Vinci"><label for="Leonardo da Vinci">Leonardo da Vinci</label><br>
+            <input type="radio" name="6" value="Pablo Picasso" id="Pablo Picasso"><label for="Pablo Picasso">Pablo Picasso</label><br>
+            <p id="question">7. En quelle année a eu lieu la Nakba, un événement majeur dans l'histoire palestinienne?</p>
+            <input type="radio" name="7" value="1945" id="1945"><label for="1945">1945</label><br>
+            <input type="radio" name="7" value="1948" id="1948"><label for="1948">1948</label><br>
+            <input type="radio" name="7" value="1956" id="1956"><label for="1956">1956</label><br>
+            <p id="question">8. Qui était le dirigeant de l'Union soviétique pendant la Seconde Guerre mondiale?</p>
+            <input type="radio" name="8" value="Nikita Khrushchev" id="Nikita Khrushchev"><label for="Nikita Khrushchev">Nikita Khrushchev</label><br>
+            <input type="radio" name="8" value="Joseph Staline" id="Joseph Staline"><label for="Joseph Staline">Joseph Staline</label><br>
+            <input type="radio" name="8" value="Leon Trotsky" id="Leon Trotsky"><label for="Leon Trotsky">Leon Trotsky</label><br>
+            <p id="question">9. Quel événement a déclenché la Première Guerre mondiale en 1914?</p>
+            <input type="radio" name="9" value="Invasion de la Pologne" id="Invasion de la Pologne"><label for="Invasion de la Pologne">Invasion de la Pologne</label><br>
+            <input type="radio" name="9" value="Assassinat de l'archiduc François-Ferdinand" id="Assassinat de l'archiduc François-Ferdinand"><label for="Assassinat de l'archiduc François-Ferdinand">Assassinat de l'archiduc François-Ferdinand</label><br>
+            <input type="radio" name="9" value="Traité de Versailles" id="Traité de Versailles"><label for="Traité de Versailles">Traité de Versailles</label><br>
+            <p id="question">10. Qui était le premier président des États-Unis?</p>
+            <input type="radio" name="10" value="Thomas Jefferson" id="Thomas Jefferson"><label for="Thomas Jefferson">Thomas Jefferson</label><br>
+            <input type="radio" name="10" value="John Adams" id="John Adams"><label for="John Adams">John Adams</label><br>
+            <input type="radio" name="10" value="George Washington" id="George Washington"><label for="George Washington">George Washington</label><br>
+            <input id="boutton" type="button" name="boutton" value="ENVOYER LES REPONSES" onclick="afficherResultats(quiz)">
+        </form>
+    </main>
+    <footer>
+        <h1 id="reseaux sociaux">Mes Réseaux Sociaux</h1>
+        <nav>
+            <a href="https://www.facebook.com/chaima.ch.750"><img src="../projet web/images/facebook.png" title="Facebook" height="50" width="50"></a>
+            <a href="https://www.instagram.com/chaima_ch2002/"><img src="../projet web/images/insta.jpg" title="Instagram" height="50" width="50"></a>
+            <a href="https://www.linkedin.com/in/chaima-chelly-926247236/"><img src="../projet web/images/linkedin.png" title="Linkedin" height="50" width="50"></a>
+        </nav>
+    </footer>
+</body>
+</html>
